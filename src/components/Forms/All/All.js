@@ -32,12 +32,13 @@ class All extends Component {
     }
 
     render(){
-
+        // console.log(this.state.applications.id)
         let allApplications = this.state.applications.map(application => {
                 return (
                     <Application 
                     clicked = { () => this.clickedHandle (application.id)}
                     key = {application.id}
+                    keyId= {application.id}
                     name = {application.name}
                     age = {application.age}
                 />)
