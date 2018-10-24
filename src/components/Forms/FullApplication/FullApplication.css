@@ -1,0 +1,19 @@
+.FullApplication {
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 10px -9px 25px 0px rgba(214,211,214,1);
+    
+}
+.label{
+    text-align: right;
+    font-weight: bold
+}
+.text { 
+    text-align: left;
+}
+.delete{
+    margin: 5px;
+}
+.button-application {
+    text-align: right;
+}

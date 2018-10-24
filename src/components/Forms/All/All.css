@@ -1,0 +1,6 @@
+.newButton a{
+    color: white
+}
+a:hover {
+    cursor: pointer;
+}
