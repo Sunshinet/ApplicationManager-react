@@ -104,8 +104,6 @@ class Create extends Component {
       introduction: this.state.introduction,
       homeStudy: this.state.homeStudy,
 
-
-
     }
     axios.post('https://react-app-ab29b.firebaseio.com/students.json', student)
       .then(res => {

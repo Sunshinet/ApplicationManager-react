@@ -91,7 +91,7 @@ class FullApplication extends Component {
                 </div>
                 <div className = "row">
                 <div className = "col s6">
-                <div className = "label">Start Date </div>
+                <div className = "label">Start Date</div>
                 </div>
                 <div className = "col s6 text">
                 <div>{this.state.application.startDate}</div>
@@ -107,15 +107,15 @@ class FullApplication extends Component {
                 </div>
              
                 <div className = "row">
-            <div className = "col s6">
+                 <div className = "col s6">
                 <div className = "label">Introduction </div>
                 </div>
                 <div className = "col s6 text">
-                <div>{this.state.application.skills}</div>
+                <div>{this.state.application.introduction}</div>
                 </div>
                 </div>
                 <div className = "row">
-            <div className = "col s6">
+                 <div className = "col s6">
                 <div className = "label">Home Study </div>
                 </div>
                 <div className = "col s6 text">
