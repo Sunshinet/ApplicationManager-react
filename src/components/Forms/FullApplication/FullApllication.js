@@ -27,7 +27,7 @@ class FullApplication extends Component {
     onDelete(){
         axios.delete('https://react-app-ab29b.firebaseio.com/students/' + this.state.id + '.json')
         .then(res => {
-        console.log(res)
+            this.props.history.push('/');
         })
         .catch(err => {
             console.log(err)
@@ -127,7 +127,7 @@ class FullApplication extends Component {
                     <Link  className="waves-effect waves-light blue btn edit" to = {`/all-applications/${this.props.match.params.id}/edit`}>Edit</Link>
                     </div>
                     <div className = "col s6 ">
-                    <button className="waves-effect waves-dark red btn delete" onClick = {() => this.onDelete()}>Delete</button>
+                    <button className="waves-effect waves-dark red btn delete" onClick = { () => {if(window.confirm('Are you sure you want to delete this application?')) this.onDelete()}}>Delete</button>
                 </div>
                 </div>
             </div>
