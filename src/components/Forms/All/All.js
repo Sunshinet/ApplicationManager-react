@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import axios from '../../../axios';
 import Application from '../Application/Application';
 import {NavLink} from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 import './All.css'
 class All extends Component {
 
     state = {
         applications: [],
+        loading: true
     }
     componentDidMount() {
         axios.get('https://react-app-ab29b.firebaseio.com/students.json')
@@ -18,7 +20,8 @@ class All extends Component {
                         id: key
                     })
                     this.setState({
-                        applications: fetchApplication
+                        applications: fetchApplication, 
+                        loading: false
                     })
                 }
             })
@@ -32,8 +35,11 @@ class All extends Component {
     }
 
     render(){
-        // console.log(this.state.applications.id)
-        let allApplications = this.state.applications.map(application => {
+        let allApplications;
+        if(this.state.loading){
+            allApplications = <Spinner />
+        }else{
+            allApplications = this.state.applications.map(application => {
                 return (
                     <Application 
                     clicked = { () => this.clickedHandle (application.id)}
@@ -43,14 +49,16 @@ class All extends Component {
                     age = {application.age}
                 />)
         })
-
+        }
         return(
             <div className = "All">
-            <h1>All Application</h1>
-                <div className="collection">
-                {allApplications}
+            <h1>All Applications</h1>
+                <div>
+                    <ul className="collection">
+                      {allApplications}
+                    </ul>
                 </div>
-            <button className="waves-effect waves-light btn newButton"><NavLink to="/new-application">New Application</NavLink></button>
+                <button className="waves-effect waves-light btn newButton"><NavLink to="/new-application">New Application</NavLink></button>
             </div>
         )
 }

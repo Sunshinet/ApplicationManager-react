@@ -24,7 +24,7 @@ class Edit extends Component {
     nameValid: true,
     ageValid: true,
     formValid: true,
-    phoneNumberValid: true
+
   }
 
   componentDidMount() {
@@ -87,7 +87,9 @@ class Edit extends Component {
 
   render() {
     return(
+     
         <div className = "container">
+        <h1>Edit Application</h1>
           <form onSubmit = {this.onSubmit}>
               <input type="text" placeholder="Name" name="name" onChange = {(event) => this.stateChangeHandler(event)} value = {this.state.name}/>
               <input type="text" placeholder="Email" name="email" onChange = {(event) => this.stateChangeHandler(event)} value = {this.state.email}/>

@@ -5,7 +5,9 @@ import './FullApplication.css';
 class FullApplication extends Component {
 
     state = {
-        application: [],
+        application: [
+            {homeStudy: 'No'}
+        ],
         id: ''
     }
 
@@ -34,6 +36,12 @@ class FullApplication extends Component {
         })
     }
     render() {
+         let homeStudy;
+        if(this.state.application.homeStudy === true) {
+            homeStudy = <div>Yes</div>
+        }else if(this.state.application.homeStudy === false){
+            homeStudy = <div>No</div>
+        }
         return(
             <div className = "container FullApplication">
                 <div className = "row">
@@ -119,7 +127,7 @@ class FullApplication extends Component {
                 <div className = "label">Home Study </div>
                 </div>
                 <div className = "col s6 text">
-                <div>{this.props.homeStudy}</div>
+                <div>{homeStudy}</div>
                 </div>
                 </div>
                 <div className = "row">

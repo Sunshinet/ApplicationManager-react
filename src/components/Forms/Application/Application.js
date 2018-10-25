@@ -3,7 +3,7 @@ import React from 'react' ;
 const application = (props) => {
    return(
     <React.Fragment>
-        <a  className="collection-item" id = {props.keyId} onClick = {props.clicked}>{props.name}</a>
+        <li  className="collection-item" id = {props.keyId} onClick = {props.clicked}>{props.name}</li>
     </React.Fragment>
    )
 }

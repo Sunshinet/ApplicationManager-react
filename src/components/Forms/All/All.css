@@ -1,6 +1,7 @@
 .newButton a{
     color: white
 }
-a:hover {
+li,
+a:hover  {
     cursor: pointer;
 }

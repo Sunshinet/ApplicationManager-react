@@ -63,7 +63,7 @@ class Create extends Component {
         fieldValidationErrors.age = ageValid ? '' : 'You must be 18!';
         break;
       case 'phoneNumber':
-        phoneNumberValid = value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)
+        phoneNumberValid = value.match(/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/)
         fieldValidationErrors.phoneNumber = phoneNumberValid ? '' : 'is invalid!';
         break;
       default:
